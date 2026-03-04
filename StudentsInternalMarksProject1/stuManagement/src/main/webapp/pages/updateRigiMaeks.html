@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSC Registration Form</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #ffecd2, #fcb69f);
+        padding: 20px;
+    }
+    .form-container {
+        background: #ffffff;
+        border-radius: 15px;
+        padding: 25px;
+        max-width: 950px;
+        margin: auto;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        border: 3px solid #ff9a8b;
+    }
+    h2 {
+        text-align: center;
+        color: #e74c3c;
+        margin-bottom: 20px;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+    label {
+        font-weight: bold;
+        color: #34495e;
+        display: block;
+        margin: 8px 0 4px;
+    }
+    input, select {
+        width: 100%;
+        padding: 8px;
+        border: 2px solid #f8c291;
+        border-radius: 8px;
+        outline: none;
+        transition: 0.3s;
+        background: #fffaf0;
+    }
+    input:focus, select:focus {
+        border-color: #e67e22;
+        box-shadow: 0 0 10px rgba(230, 126, 34, 0.6);
+        background: #fff3e0;
+    }
+    .form-row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    .form-row div {
+        flex: 1;
+        min-width: 150px;
+    }
+    .subject-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+    .subject-table th {
+        background: linear-gradient(90deg, #ff9a8b, #ff6a88);
+        color: white;
+        padding: 10px;
+        text-align: center;
+        font-size: 14px;
+    }
+    .subject-table td {
+        padding: 8px;
+        text-align: center;
+        background: #fffaf0;
+        border: 1px solid #f8c291;
+    }
+    .subject-table tr:nth-child(even) td {
+        background: #fff5eb;
+    }
+    button {
+        background: linear-gradient(90deg, #ff6a88, #ff9a8b);
+        color: white;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+        display: block;
+        margin: auto;
+        margin-top: 20px;
+        box-shadow: 0 5px 15px rgba(255, 105, 135, 0.4);
+    }
+    button:hover {
+        background: linear-gradient(90deg, #ff9a8b, #ff6a88);
+        transform: scale(1.05);
+    }
+</style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Student Internal Update Form</h2>
+    <form action="updatemarks.jsp" method="post">
+<div>
+     <label for="year">Select Year</label>
+    <select id="year" name="year">
+                        <option>
+                            1
+                        </option>
+                         <option>
+                         2
+                        </option>
+                        <option>
+                         3
+                        </option>
+                    </select>
+                    </div>
+        <div class="form-row">
+            <div>
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob">
+            </div>
+        </div>
+
+        <label>Subjects & Marks</label>
+        <table class="subject-table">
+            <thead>
+                <tr>
+                    <th>Subject Name</th>
+                    <th>Internal 1</th>
+                    <th>Internal 2</th>
+                    <th>Seminar Marks</th>
+                    <th>Present Marks</th>
+                </tr>
+            </thead>
+            <tbody>
+                       <tr>
+                    <td><select name="subject1">
+                        <option>DataStructure</option>
+                        <option>Advanced Python Programing</option>
+                        <option>Advanced java Programing</option>
+                        <option>Computer Networks</option>
+                        <option>Operating System</option>
+                    </select></td>
+                    <td><input type="number" name="internal1_1" min="0" max="30" required></td>
+                    <td><input type="number" name="internal2_1" min="0" max="30" required></td>
+                    <td><select name="seminar1"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td>
+                    <td><select name="present1"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td>
+                </tr>
+
+                <tr>
+                    <td><select name="subject2">
+                        <option>DataStructure</option>
+                        <option>Advanced Python Programing</option>
+                        <option>Advanced java Programing</option>
+                        <option>Computer Networks</option>
+                        <option>Operating System</option>
+                    </select></td>
+                    <td><input type="number" name="internal1_2" min="0" max="25" required></td>
+                    <td><input type="number" name="internal2_2" min="0" max="25" required></td>
+                    <td><select name="seminar2"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td>
+                    <td><select name="present2"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td>
+                </tr>
+                       <tr>
+                    <td><select name="subject3">
+                        <option>DataStructure</option>
+                        <option>Advanced Python Programing</option>
+                        <option>Advanced java Programing</option>
+                        <option>Computer Networks</option>
+                        <option>Operating System</option>
+                    </select></td>
+                    <td><input type="number" name="internal1_3" min="0" max="30" required></td>
+                    <td><input type="number" name="internal2_3" min="0" max="30" required></td>
+                    <td><select name="seminar3"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td>
+                    <td><select name="present3"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td>
+                </tr>
+
+        
+                <tr>
+                    <td><select name="subject4">
+                        <option>DataStructure</option>
+                        <option>Advanced Python Programing</option>
+                        <option>Advanced java Programing</option>
+                        <option>Computer Networks</option>
+                        <option>Operating System</option>
+                    </select></td>
+                    <td><input type="number" name="internal1_4" min="0" max="25" required></td>
+                    <td><input type="number" name="internal2_4" min="0" max="25" required></td>
+                    <td><select name="seminar4"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td>
+                    <td><select name="present4"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td>
+                </tr>
+                                <tr>
+    <td><select name="subject5">
+        <option>DataStructure</option>
+        <option>Advanced Python Programing</option>
+        <option>Advanced java Programing</option>
+        <option>Computer Networks</option>
+        <option>Operating System</option>
+    </select></td>
+    <td><input type="number" name="internal1_5" min="0" max="25" required></td>
+    <td><input type="number" name="internal2_5" min="0" max="25" required></td>
+    <td>
+        <select name="seminar5">
+            <option>0</option><option>1</option><option>2</option>
+            <option>3</option><option>4</option><option>5</option>
+        </select>
+    </td>
+    <td>
+        <select name="present5">
+            <option>0</option><option>1</option><option>2</option>
+            <option>3</option><option>4</option><option>5</option>
+        </select>
+    </td>
+</tr>
+
+                
+                </tbody>
+        </table>
+ <label>Marks of Identification</label>
+        <input type="text" placeholder="Identification Hall Ticket" name="htm">
+        <input type="text" placeholder="Identification Candidate Name" name="name">
+
+       <button type="submit">Update</button> <button type="submit"><a href="Registratin.html"style="text-decoration:none">Cancel</a></button>
+    </form>
+</div>
+
+</body>
+</html>

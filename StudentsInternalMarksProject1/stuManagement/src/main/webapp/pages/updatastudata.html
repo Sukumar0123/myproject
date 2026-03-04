@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert Student Data</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #162be9, #fcb69f);
+        padding: 20px;
+    }
+    .form-container {
+        background: #ffffff;
+        border-radius: 15px;
+        padding: 25px;
+        max-width: 950px;
+        margin: auto;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        border: 3px solid #ff9a8b;
+    }
+    h2 {
+        text-align: center;
+        color: #e74c3c;
+        margin-bottom: 20px;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+    label {
+        font-weight: bold;
+        color: #34495e;
+        display: block;
+        margin: 8px 0 4px;
+    }
+    input, select {
+        width: 100%;
+        padding: 8px;
+        border: 2px solid #f8c291;
+        border-radius: 8px;
+        outline: none;
+        transition: 0.3s;
+        background: #fffaf0;
+    }
+    input:focus, select:focus {
+        border-color: #e67e22;
+        box-shadow: 0 0 10px rgba(230, 126, 34, 0.6);
+        background: #fff3e0;
+    }
+    button {
+        background: linear-gradient(90deg, #ff6a88, #ff9a8b);
+        color: white;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+        display: block;
+        margin: auto;
+        margin-top: 20px;
+        box-shadow: 0 5px 15px rgba(255, 105, 135, 0.4);
+    }
+    button:hover {
+        background: linear-gradient(90deg, #ff9a8b, #ff6a88);
+        transform: scale(1.05);
+    }
+</style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>SSC Registration Form</h2>
+    <form>
+        <label for="name">Candidate Name</label>
+        <input type="text" id="name" placeholder="Enter full name">
+
+        <label for="father">Father's Name</label>
+        <input type="text" id="father" placeholder="Enter father's name">
+
+        <label for="mother">Mother's Name</label>
+        <input type="text" id="mother" placeholder="Enter mother's name">
+
+        <label for="rollno">Hall Ticket Number</label>
+        <input type="text" id="rollno" placeholder="Enter roll number">
+<div>
+     <label for="year">Select Year</label>
+    <select id="year">
+                        <option>
+                            1
+                        </option>
+                         <option>
+                         2
+                        </option>
+                        <option>
+                         3
+                        </option>
+                    </select>
+                    </div>
+        <label for="school">College Name</label>
+        <input type="text" id="school" placeholder="Enter school name">
+
+        <div class="form-row">
+            <div>
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob">
+            </div>
+        </div>
+<label> Identification</label>
+        <input type="text" placeholder="Identification Hall Ticket">
+        <input type="text" placeholder="Identification Candidate Name">
+        <button type="submit">Update</button> <button type="submit"><a href="Registratin.html"style="text-decoration:none">Cancel</a></button>
+    </form>
+</div>
+
+</body>
+</html>
