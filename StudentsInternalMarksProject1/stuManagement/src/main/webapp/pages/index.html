@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vikrama Simhapuri University</title>
+<style>
+    :root{
+        /* Govt / University theme */
+        --navy: #0b2e4a;
+        --navy2:#08304f;
+        --saffron:#ff9933;
+        --green:#138808;
+        --bg:#f5f7fa;
+        --card:#ffffff;
+        --text:#1f2a37;
+        --muted:#6b7280;
+        --border:#d9e2ec;
+        --shadow: 0 6px 18px rgba(11,46,74,0.15);
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+    }
+    h1, h2, h5 {
+        font-family: 'Segoe UI', sans-serif;
+        color: var(--navy);
+    }
+
+    /* Header */
+    header {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 18px 20px;
+        background: linear-gradient(90deg, var(--navy), var(--navy2));
+        color: white;
+        border-bottom: 4px solid var(--saffron);
+        animation: fadeDown 1s ease;
+    }
+    header h2{
+        color: #ffffff;
+        letter-spacing: 0.3px;
+        margin: 0;
+    }
+    header img {
+        border-radius: 50%;
+        background: #fff;
+        padding: 6px;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.22);
+    }
+
+    /* Navigation */
+    nav {
+        display: flex;
+        justify-content: center;
+        background: #ffffff;
+        padding: 10px 12px;
+        border-bottom: 1px solid var(--border);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+    nav div {
+        position: relative;
+        margin: 0 12px;
+    }
+    nav a {
+        text-decoration: none;
+        color: var(--navy);
+        font-weight: 700;
+        padding: 10px 12px;
+        border-radius: 6px;
+        transition: background 0.2s ease, color 0.2s ease;
+        display: inline-block;
+    }
+    nav a:hover {
+        background: rgba(255,153,51,0.15);
+        color: var(--navy);
+    }
+
+    /* Dropdown menu */
+    .menu {
+        display: none;
+        position: absolute;
+        background: #ffffff;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 8px;
+        min-width: 180px;
+        box-shadow: var(--shadow);
+        animation: fadeIn 0.25s ease;
+        top: 45px;
+        left: 0;
+    }
+    .menu div {
+        margin: 6px 0;
+    }
+    .menu a{
+        color: var(--text);
+        font-weight: 600;
+        width: 100%;
+    }
+    .menu a:hover{
+        background: rgba(11,46,74,0.06);
+    }
+    nav div:hover .menu {
+        display: block;
+    }
+
+    /* Main Section */
+    main {
+        padding: 30px 18px;
+        text-align: center;
+        animation: fadeUp 1s ease;
+    }
+    main div {
+        max-width: 900px;
+        margin: auto;
+        background: var(--card);
+        padding: 22px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+    }
+    main p{
+        color: var(--text);
+        line-height: 1.6;
+    }
+    video {
+        width: 100%;
+        margin-top: 18px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+    }
+
+    /* Titles */
+    h1{
+        margin-top: 26px;
+        margin-bottom: 10px;
+        position: relative;
+    }
+    h1::after{
+        content:"";
+        display:block;
+        width: 90px;
+        height: 4px;
+        margin: 10px auto 0;
+        background: var(--saffron);
+        border-radius: 6px;
+    }
+
+    /* Sections */
+    .skill_section, .update_section, .sectio {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 14px 18px 30px;
+        gap: 18px;
+    }
+    .skill_section div, .update_section div, .sectio div {
+        color: var(--text);
+        width: 250px;
+        padding: 16px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        background: var(--card);
+        box-shadow: var(--shadow);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        animation: zoomIn 0.8s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Accent bars (govt look) */
+    .skill_section div::before,
+    .update_section div::before,
+    .sectio div::before{
+        content:"";
+        position:absolute;
+        top:0; left:0;
+        width: 100%;
+        height: 5px;
+        background: var(--saffron);
+    }
+    .update_section div::before{
+        background: var(--green);
+    }
+    .sectio div::before{
+        background: var(--navy);
+    }
+
+    .skill_section div h2,
+    .update_section div h2,
+    .sectio div h2{
+        margin-top: 10px;
+        color: var(--navy);
+    }
+    .skill_section div p, .update_section div p, .sectio div p{
+        color: var(--muted);
+        line-height: 1.55;
+    }
+
+    .skill_section div:hover, .update_section div:hover, .sectio div:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 14px 30px rgba(11,46,74,0.22);
+        border-color: rgba(11,46,74,0.25);
+    }
+
+    /* Update links */
+    .update_section a{
+        color: var(--navy);
+        text-decoration: none;
+        font-weight: 700;
+    }
+    .update_section a:hover{
+        text-decoration: underline;
+        color: #06233a;
+    }
+
+    /* Facilities Images */
+    .sectio img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-top: 10px;
+        border: 1px solid var(--border);
+    }
+
+    /* Footer */
+    footer {
+        background: linear-gradient(90deg, var(--navy), var(--navy2));
+        color: white;
+        text-align: center;
+        padding: 16px;
+        font-size: 14px;
+        border-top: 4px solid var(--saffron);
+        animation: fadeUp 1s ease;
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+        from {opacity: 0; transform: translateY(20px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeDown {
+        from {opacity: 0; transform: translateY(-20px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+    @keyframes zoomIn {
+        from {opacity: 0; transform: scale(0.96);}
+        to {opacity: 1; transform: scale(1);}
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        header, nav, .skill_section, .update_section, .sectio {
+            flex-direction: column;
+            text-align: center;
+        }
+        .skill_section div, .update_section div, .sectio div {
+            width: 90%;
+        }
+        .menu{
+            position: static;
+            margin-top: 10px;
+            width: 100%;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <div><img src="../assets/images/vsulogo.png" width="100px"></div>
+    <div><h2>Vikrama Simhapuri University</h2></div>
+    <div><img src="../assets/images/naac_new.png" width="100px" height="100px"></div>
+</header>
+
+<nav>
+    <div><a href="index.html">Home</a></div>
+    <div><a href="contactpage.html">Contact</a></div>
+    <div>
+        <a href="#">Menu</a>
+        <div class="menu">
+            <div><a href="Login.html">Register</a></div>
+            <div><a href="Result.html">Result</a></div>
+            <div><a href="#updata">Updates</a></div>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <div>
+        <p><strong>Vikrama Simhapuri University</strong> in Nellore was established in 2008, fulfilling the long-cherished dream of the people of Potti Sriramulu Nellore District. This institution aims to promote quality higher education, research, and innovation while providing excellent academic facilities for students.</p>
+        <video src="../assets/videos/vsu.mp4" autoplay muted></video>
+    </div>
+</main>
+
+<h1 style="text-align:center;">Features</h1>
+<section class="skill_section">
+    <div>
+        <h2>Registration</h2>
+        <p>Online registration for all UG, PG, and doctoral programs with a user-friendly portal for hassle-free admissions.</p>
+    </div>
+    <div>
+        <h2>Syllabus Structure</h2>
+        <p>Well-organized and updated syllabus designed according to the latest UGC and industry guidelines.</p>
+    </div>
+    <div>
+        <h2>Student Result</h2>
+        <p>Fast and accurate online result publication system ensuring transparency in academic assessments.</p>
+    </div>
+    <div>
+        <h2>Photos & Videos</h2>
+        <p>Media gallery showcasing university events, seminars, workshops, and cultural programs.</p>
+    </div>
+</section>
+
+<h1 id="updata" style="text-align:center;">Updates</h1>
+<section class="update_section">
+    <div>
+        <h2>Latest News</h2>
+        <h5><a href="Result.html">Results for MCA Students Released</a></h5>
+        <h5><a href="#">Admissions Open for 2025 Batch</a></h5>
+    </div>
+</section>
+
+<h1 style="text-align:center;">Facilities</h1>
+<section class="sectio">
+    <div>
+        <h2>Library</h2>
+        <img src="../assets/images/library.jpg" alt="Library">
+        <p>Fully equipped digital library with access to national and international journals, e-books, and study materials.</p>
+    </div>
+    <div>
+        <h2>Hostels</h2>
+        <img src="../assets/images/hostels.jpg" alt="Hostel">
+        <p>Separate hostels for boys and girls with 24/7 security, clean rooms, and mess facilities.</p>
+    </div>
+    <div>
+        <h2>Labs</h2>
+        <img src="../assets/images/labs.jpg" alt="Labs">
+        <p>Advanced computer, science, and research laboratories with modern equipment.</p>
+    </div>
+    <div>
+        <h2>Seminar Halls</h2>
+        <img src="../assets/images/seminarhall.jpg" alt="Seminar Hall">
+        <p>State-of-the-art seminar halls for workshops, lectures, and guest sessions.</p>
+    </div>
+</section>
+
+<footer>
+    Name: Sukumar | Mail: nelloresukumar22@gmail.com| Phone: 9347435078
+</footer>
+
+</body>
+</html>

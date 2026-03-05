@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert Student Data</title>
+<style>
+
+:root{
+    --navy:#0b2e4a;
+    --navy2:#08304f;
+    --saffron:#ff9933;
+    --bg:#f5f7fa;
+    --card:#ffffff;
+    --text:#1f2a37;
+    --border:#d9e2ec;
+    --shadow:0 6px 18px rgba(11,46,74,0.15);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    padding: 20px;
+}
+
+/* FORM CARD */
+.form-container {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 30px;
+    max-width: 950px;
+    margin: auto;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    position: relative;
+}
+
+/* GOVT ACCENT BAR */
+.form-container::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background: var(--saffron);
+    border-radius:14px 14px 0 0;
+}
+
+h2 {
+    text-align: center;
+    color: var(--navy);
+    margin-bottom: 20px;
+    font-family:"Segoe UI",sans-serif;
+}
+
+/* LABEL */
+label {
+    font-weight: bold;
+    color: var(--navy);
+    display: block;
+    margin: 10px 0 5px;
+}
+
+/* INPUTS */
+input, select {
+    width: 100%;
+    padding: 9px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    outline: none;
+    transition: 0.3s;
+    background: #ffffff;
+}
+
+/* INPUT FOCUS */
+input:focus, select:focus {
+    border-color: var(--navy);
+    box-shadow: 0 0 5px rgba(11,46,74,0.25);
+}
+
+/* BUTTON */
+button {
+    background: var(--navy);
+    color: white;
+    padding: 11px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 18px;
+}
+
+button:hover {
+    background: #06233a;
+}
+
+/* CANCEL BUTTON LINK */
+button a{
+    text-decoration:none;
+    color:white;
+}
+
+</style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Insert Student Form</h2>
+    <form action="../jsp/insertData.jsp" method="post">
+        <label for="name">Candidate Name</label>
+        <input type="text" id="name" placeholder="Enter full name" name="sname">
+
+        <label for="father">Father's Name</label>
+        <input type="text" id="father" placeholder="Enter father's name" name="fname">
+
+        <label for="mother">Mother's Name</label>
+        <input type="text" id="mother" placeholder="Enter mother's name" name="mname">
+
+        <label for="rollno">Hall Ticket Number</label>
+        <input type="text" id="rollno" placeholder="Enter roll number" name="htmnum">
+<div>
+     <label for="year">Select Year</label>
+    <select id="year" name="year">
+                        <option>
+                            2024
+                        </option>
+                         <option>
+                         2025
+                        </option>
+                        <option>
+                         2026
+                        </option>
+                    </select>
+                    </div>
+        <label for="school">College Name</label>
+        <input type="text" id="school" placeholder="Enter school name" name="college">
+
+        <div class="form-row">
+            <div>
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dataofbith">
+            </div>
+        </div>
+
+        <button type="submit">Submit</button> <button type="submit"><a href="Registratin.html"style="text-decoration:none">Cancel</a></button>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSC Registration Form</title>
+<style>
+:root{
+    --navy:#0b2e4a;
+    --navy2:#08304f;
+    --saffron:#ff9933;
+    --bg:#f5f7fa;
+    --card:#ffffff;
+    --text:#1f2a37;
+    --muted:#6b7280;
+    --border:#d9e2ec;
+    --shadow:0 6px 18px rgba(11,46,74,0.15);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    padding: 20px;
+    color: var(--text);
+}
+
+/* FORM CARD */
+.form-container {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 28px;
+    max-width: 950px;
+    margin: auto;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    position: relative;
+}
+
+/* GOVT ACCENT BAR */
+.form-container::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background: var(--saffron);
+    border-radius:14px 14px 0 0;
+}
+
+h2 {
+    text-align: center;
+    color: var(--navy);
+    margin-bottom: 18px;
+    font-family:"Segoe UI",sans-serif;
+}
+
+/* LABEL */
+label {
+    font-weight: 700;
+    color: var(--navy);
+    display: block;
+    margin: 10px 0 5px;
+}
+
+/* INPUTS / SELECT */
+input, select {
+    width: 100%;
+    padding: 9px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    outline: none;
+    transition: 0.25s;
+    background: #ffffff;
+    color: var(--text);
+}
+
+input:focus, select:focus {
+    border-color: var(--navy);
+    box-shadow: 0 0 5px rgba(11,46,74,0.25);
+}
+
+/* ROW */
+.form-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.form-row div {
+    flex: 1;
+    min-width: 150px;
+}
+
+/* TABLE */
+.subject-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.subject-table th {
+    background: linear-gradient(90deg, var(--navy), var(--navy2));
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.subject-table td {
+    padding: 8px;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid var(--border);
+}
+
+.subject-table tr:nth-child(even) td {
+    background: #f8fafc; /* light govt shade */
+}
+
+/* BUTTONS */
+button {
+    background: var(--navy);
+    color: white;
+    padding: 11px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.25s;
+    display: inline-block;
+    margin: 18px 8px 0 0;
+}
+
+button:hover {
+    background: #06233a;
+}
+
+/* CANCEL LINK */
+button a{
+    text-decoration:none;
+    color:white;
+}
+</style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>SSC Registration Form</h2>
+    <form action="../jsp/insertmarks.jsp" method="post"h>
+        <label for="name">Candidate Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter full name" required>
+
+        <label for="rollno">Hall Ticket Number</label>
+        <input type="text" id="rollno" name="htm" placeholder="Enter roll number" required>
+<div>
+     <label for="year">Select Year</label>
+    <select id="year" name="Year">
+                        <option>
+                            1
+                        </option>
+                         <option>
+                         2
+                        </option>
+                        <option>
+                         3
+                        </option>
+                    </select>
+                    </div>
+        <div class="form-row">
+            <div>
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+        </div>
+
+        <label>Subjects & Marks</label>
+        <table class="subject-table">
+            <thead>
+                <tr>
+                    <th>Subject Name</th>
+                    <th>Internal 1</th>
+                    <th>Internal 2</th>
+                    <th>Seminar Marks</th>
+                    <th>Present Marks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><select name="subject1">
+                        <option>
+                            DataStructure
+                        </option>
+                         <option>
+                         Advanced Python Programing
+                        </option>
+                        <option>
+                         Advanced java Programing
+                        </option>
+                        <option>
+                         Computer Networks
+                        </option>
+                        <option>
+                         Operating System
+                        </option>
+                    </select></td>
+                    <td><input type="number" name="internal1_1" min="0" max="30" oninput="this.value=Math.min(Math.max(this.value,0),30)" required></td>
+                    <td><input type="number" min="0" name="internal1_2"  max="30" oninput="this.value=Math.min(Math.max(this.value,0),30)" required></td>
+                    <td><select name="seminar1">
+                         <option>
+                    0
+                        </option>
+                        <option>
+                            1
+                        </option>
+                         <option>
+                         2
+                        </option>
+                        <option>
+                         3
+                        </option>
+                        <option>
+                         4
+                        </option>
+                        <option>
+                    5
+                        </option>
+                    </select></td>
+                    <td><select name="present1">
+                         <option>
+                    0
+                        </option>
+                        <option>
+                            1
+                        </option>
+                         <option>
+                         2
+                        </option>
+                        <option>
+                         3
+                        </option>
+                        <option>
+                         4
+                        </option>
+                        <option>
+                    5
+                        </option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td><select name="subject2">
+                        <option>
+                            DataStructure
+                        </option>
+                         <option>
+                         Advanced Python Programing
+                        </option>
+                        <option>
+                         Advanced java Programing
+                        </option>
+                        <option>
+                         Computer Networks
+                        </option>
+                        <option>
+                         Operating System
+                        </option>
+                    </select></td>
+                    <td><input type="number" name="internal2_1" min="0" max="30" oninput="this.value=Math.min(Math.max(this.value,0),30)" required></td>
+                    <td><input type="number" min="0" name="internal2_2"  max="30" oninput="this.value=Math.min(Math.max(this.value,0),30)" required></td>
+                    <td><select name="seminar2">
+                         <option>
+                    0
+                        </option>
+                        <option>
+                            1
+                        </option>
+                         <option>
+                         2
+                        </option>
+                        <option>
+                         3
+                        </option>
+                        <option>
+                         4
+                        </option>
+                        <option>
+                    5
+                        </option>
+                    </select></td>
+                    <td><select name="present2">
+                         <option>
+                    0
+                        </option>
+                        <option>
+                            1
+                        </option>
+                         <option>
+                         2
+                        </option>
+                        <option>
+                         3
+                        </option>
+                        <option>
+                         4
+                        </option>
+                        <option>
+                    5
+                        </option>
+                    </select></td>
+                </tr>
+                                <tr>
+                    <td><select name="subject3">
+                        <option>
+                            DataStructure
+                        </option>
+                         <option>
+                         Advanced Python Programing
+                        </option>
+                        <option>
+                         Advanced java Programing
+                        </option>
+                        <option>
+                         Computer Networks
+                        </option>
+                        <option>
+                         Operating System
+                        </option>
+                    </select></td>
+                    <td><input type="number" name="internal3_1" min="0" max="30" oninput="this.value=Math.min(Math.max(this.value,0),30)" required></td>
+                    <td><input type="number" min="0" name="internal3_2"  max="30" oninput="this.value=Math.min(Math.max(this.value,0),30)" required></td>
+                    <td><select name="seminar3">
+                         <option>
+                    0
+                        </option>
+                        <option>
+                            1
+                        </option>
+                         <option>
+                         2
+                        </option>
+                        <option>
+                         3
+                        </option>
+                        <option>
+                         4
+                        </option>
+                        <option>
+                    5
+                        </option>
+                    </select></td>
+                    <td><select name="present3">
+                         <option>
+                    0
+                        </option>
+                        <option>
+                            1
+                        </option>
+                         <option>
+                         2
+                        </option>
+                        <option>
+                         3
+                        </option>
+                        <option>
+                         4
+                        </option>
+                        <option>
+                    5
+                        </option>
+                    </select></td>
+                </tr>
+
+                               <tr>
+                    <td><select name="subject4">
+                        <option>
+                            DataStructure
+                        </option>
+                         <option>
+                         Advanced Python Programing
+                        </option>
+                        <option>
+                         Advanced java Programing
+                        </option>
+                        <option>
+                         Computer Networks
+                        </option>
+                        <option>
+                         Operating System
+                        </option>
+                    </select></td>
+                    <td><input type="number" name="internal4_1" min="0" max="30" oninput="this.value=Math.min(Math.max(this.value,0),30)" required></td>
+                    <td><input type="number" min="0" name="internal4_2"  max="30" oninput="this.value=Math.min(Math.max(this.value,0),30)" required></td>
+                    <td><select name="seminar4">
+                         <option>
+                    0
+                        </option>
+                        <option>
+                            1
+                        </option>
+                         <option>
+                         2
+                        </option>
+                        <option>
+                         3
+                        </option>
+                        <option>
+                         4
+                        </option>
+                        <option>
+                    5
+                        </option>
+                    </select></td>
+                    <td><select name="present4">
+                         <option>
+                    0
+                        </option>
+                        <option>
+                            1
+                        </option>
+                         <option>
+                         2
+                        </option>
+                        <option>
+                         3
+                        </option>
+                        <option>
+                         4
+                        </option>
+                        <option>
+                    5
+                        </option>
+                    </select></td>
+                </tr>
+
+                <tr>
+                    <td><select name="subject5">
+                        <option>
+                            DataStructure
+                        </option>
+                         <option>
+                         Advanced Python Programing
+                        </option>
+                        <option>
+                         Advanced java Programing
+                        </option>
+                        <option>
+                         Computer Networks
+                        </option>
+                        <option>
+                         Operating System
+                        </option>
+                    </select></td>
+                    <td><input type="number" name="internal5_1" min="0" max="30" oninput="this.value=Math.min(Math.max(this.value,0),30)" required></td>
+                    <td><input type="number" min="0" name="internal5_2"  max="30" oninput="this.value=Math.min(Math.max(this.value,0),30)" required></td>
+                    <td><select name="seminar5">
+                         <option>
+                    0
+                        </option>
+                        <option>
+                            1
+                        </option>
+                         <option>
+                         2
+                        </option>
+                        <option>
+                         3
+                        </option>
+                        <option>
+                         4
+                        </option>
+                        <option>
+                    5
+                        </option>
+                    </select></td>
+                    <td><select name="present5">
+                         <option>
+                    0
+                        </option>
+                        <option>
+                            1
+                        </option>
+                         <option>
+                         2
+                        </option>
+                        <option>
+                         3
+                        </option>
+                        <option>
+                         4
+                        </option>
+                        <option>
+                    5
+                        </option>
+                    </select></td>
+                </tr>
+                </tbody>
+        </table>
+
+       <button type="submit">Submit</button> <button type="submit"><a href="Registratin.html"style="text-decoration:none">Cancel</a></button>
+    </form>
+</div>
+
+</body>
+</html>
